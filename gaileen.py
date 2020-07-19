@@ -1,6 +1,9 @@
 class gaileen:
     
-    enc = [">","<","^","v",">>","<<",".",".>","<.","^[br].",".[br]v","..","O","Ø","X","/","\\","\\\\","//","/.","\\.","./",".\\",":","+","="]
+    enc_plain = [">","<","^","v",">>","<<",".",".>","<.","^.",".v","..","O","Ø","X","/","\\","\\\\","//","/.","\\.","./",".\\",":","+","="]
+    enc_html = [">","<","^","v",">>","<<",".",".>","<.","^[br].",".[br]v","..","O","Ø","X","/","\\","\\\\","//","/.","\\.","./",".\\",":","+","="]
+
+    enc = enc_html
 
     alph = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 
@@ -12,6 +15,12 @@ class gaileen:
 
     def getKey(self):
         return self.pattern
+
+    def setPlain(self):
+        self.enc = self.enc_plain
+
+    def setHtml(self):
+        self.enc = self.enc_html
 
     def encode(self, phrase, space=False):
 
