@@ -23,7 +23,9 @@ Decoding is a very similar process although spaces are not an option. It's not p
       -d | --decode - set to decode mode
       -k | --key    - a comma seperated positional key. The default is "7,9,8,0,5,0,7".
 	  -p | --plain  - Removes need for BBcode
-	  <phrase>      - the phrase you wish to decode. Due to the way some characters interact with the command line this should be quotated and there should be whitespace between code characters.
+	  <phrase>      - the phrase you wish to decode. Due to the way some characters interact with 
+	  				  the command line this should be quotated and there should be whitespace 
+					  between code characters.
 						e.g. '.\ + <<'
 
 # BBCode
