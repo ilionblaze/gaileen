@@ -19,3 +19,6 @@ class test_gaileen(unittest.TestCase):
     def test_simple_key(self):
         self.g.setKey([0,1])
         self.assertEqual(self.g.encode("sheep dog"), "//<.>><</>>X.>", "Incorrect encoding for simple key.")
+
+if __name__ == '__main__':
+    unittest.main()
