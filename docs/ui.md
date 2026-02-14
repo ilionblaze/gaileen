@@ -31,3 +31,17 @@ When the encode button is clicked we need to send the text in the encode input b
 When the decode button is clicked we need to send the text in the decode input box and the key to gaileen.py. Use the -p flag during encoding. Clear any current text for the encode input box and fill it with the output from the script. 
 
 Create tests for all generated functions.
+
+### Phase 2
+
+We want to improve the GUI experience.
+
+We want to display an animated cypher wheel. An example of a cypher wheel can be found here: "C:\Users\ilion\Downloads\cipherwheel.jpg" . Note there are two layers. A larger layer that stays stationary and displays the outer ring of alphabetical characters. The inner ring rotates. The one in the image displays a "Shift" number as it rotates around by having a whole in the second layer to display numbers from 0 - 25 printed on the lower layer corresponding with the placements of A - Z on the wheel. 
+
+Our version of the wheel needs to have the characters of the Gaileen cipher. On page the wheel should begin to slowly rotate.
+
+When the Encode or Decode button is pressed we should see the wheel spin to properly do the encoding or decoding. This means the "Shift" position needs to be lined up correctly for each character. The speed at which this is done should be easily configurable.
+
+Add Copy To Clipboard functionality for both the Encoded and Decoded text boxes.
+
+Create a Dark Mode option. 

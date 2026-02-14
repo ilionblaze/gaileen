@@ -1,10 +1,11 @@
 /**
  * Main App Component
- * Root component with error boundary
+ * Root component with error boundary and theme provider
  */
 
 import React from 'react';
 import { CipherForm } from './components/CipherForm';
+import { ThemeProvider } from './contexts/ThemeContext';
 import './App.css';
 
 class ErrorBoundary extends React.Component<
@@ -43,11 +44,13 @@ class ErrorBoundary extends React.Component<
 
 function App(): React.ReactElement {
   return (
-    <ErrorBoundary>
-      <div className="app">
-        <CipherForm />
-      </div>
-    </ErrorBoundary>
+    <ThemeProvider>
+      <ErrorBoundary>
+        <div className="app">
+          <CipherForm />
+        </div>
+      </ErrorBoundary>
+    </ThemeProvider>
   );
 }
 

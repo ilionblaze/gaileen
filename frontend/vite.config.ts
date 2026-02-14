@@ -7,6 +7,7 @@ export default defineConfig({
   server: {
     port: 3000,
     host: true,
+    strictPort: true, // Fail if port 3000 is not available instead of trying another port
   },
   test: {
     globals: true,

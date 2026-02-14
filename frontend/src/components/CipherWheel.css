@@ -1,0 +1,124 @@
+/**
+ * CipherWheel Component Styles
+ */
+
+:root {
+  --wheel-outer-bg: #f8f9fa;
+  --wheel-inner-bg: #ffffff;
+  --wheel-center-bg: #e9ecef;
+  --wheel-border: #495057;
+  --wheel-text: #212529;
+}
+
+[data-theme="dark"] {
+  --wheel-outer-bg: #2d2d2d;
+  --wheel-inner-bg: #1a1a1a;
+  --wheel-center-bg: #3a3a3a;
+  --wheel-border: #666;
+  --wheel-text: #e0e0e0;
+}
+
+.cipher-wheel-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  position: relative;
+}
+
+.cipher-wheel {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+[data-theme="dark"] .cipher-wheel {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+/* Wheel text styles */
+.wheel-symbol {
+  font-size: 14px;
+  font-weight: 600;
+  fill: var(--wheel-text);
+  font-family: 'Courier New', monospace;
+  user-select: none;
+}
+
+.wheel-letter {
+  font-size: 16px;
+  font-weight: 700;
+  fill: var(--primary-color);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  user-select: none;
+}
+
+.wheel-shift-number {
+  font-size: 10px;
+  font-weight: 600;
+  fill: var(--disabled-text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  user-select: none;
+}
+
+/* Animation status indicator */
+.animation-status {
+  font-size: 0.875rem;
+  color: var(--primary-color);
+  font-weight: 600;
+  text-align: center;
+  padding: 8px 16px;
+  background-color: rgba(74, 144, 226, 0.1);
+  border-radius: 6px;
+  border: 1px solid var(--primary-color);
+}
+
+[data-theme="dark"] .animation-status {
+  background-color: rgba(91, 163, 255, 0.15);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .cipher-wheel {
+    max-width: 300px;
+  }
+
+  .wheel-symbol {
+    font-size: 11px;
+  }
+
+  .wheel-letter {
+    font-size: 13px;
+  }
+
+  .wheel-shift-number {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cipher-wheel {
+    max-width: 250px;
+  }
+
+  .wheel-symbol {
+    font-size: 9px;
+  }
+
+  .wheel-letter {
+    font-size: 11px;
+  }
+
+  .wheel-shift-number {
+    font-size: 7px;
+  }
+}
+
+/* Accessibility - respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .inner-ring {
+    transition: none !important;
+  }
+}

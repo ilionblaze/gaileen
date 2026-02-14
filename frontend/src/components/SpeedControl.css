@@ -1,0 +1,143 @@
+/**
+ * SpeedControl Component Styles
+ */
+
+.speed-control {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  background-color: var(--card-bg);
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.speed-control-label {
+  font-size: 0.875rem;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.speed-control-label strong {
+  color: var(--primary-color);
+}
+
+.speed-control-slider-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.speed-control-min,
+.speed-control-max {
+  font-size: 0.75rem;
+  color: var(--disabled-text);
+  font-weight: 600;
+  min-width: 30px;
+  text-align: center;
+}
+
+.speed-control-slider {
+  flex: 1;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--border-color);
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+.speed-control-slider:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Webkit browsers (Chrome, Safari, Edge) */
+.speed-control-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.speed-control-slider::-webkit-slider-thumb:hover {
+  background: var(--primary-hover);
+  transform: scale(1.1);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.speed-control-slider::-webkit-slider-thumb:active {
+  transform: scale(0.95);
+}
+
+/* Firefox */
+.speed-control-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.speed-control-slider::-moz-range-thumb:hover {
+  background: var(--primary-hover);
+  transform: scale(1.1);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.speed-control-slider::-moz-range-thumb:active {
+  transform: scale(0.95);
+}
+
+/* Firefox track */
+.speed-control-slider::-moz-range-track {
+  background: var(--border-color);
+  border-radius: 3px;
+  height: 6px;
+}
+
+.speed-control-value {
+  font-size: 0.875rem;
+  color: var(--primary-color);
+  font-weight: 700;
+  text-align: center;
+  padding: 4px 8px;
+  background-color: rgba(74, 144, 226, 0.1);
+  border-radius: 4px;
+}
+
+[data-theme="dark"] .speed-control-value {
+  background-color: rgba(91, 163, 255, 0.15);
+}
+
+/* Focus styles for accessibility */
+.speed-control-slider:focus-visible {
+  outline: 3px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .speed-control {
+    max-width: 100%;
+  }
+}
+
+/* Accessibility - respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .speed-control-slider::-webkit-slider-thumb,
+  .speed-control-slider::-moz-range-thumb {
+    transition: none;
+  }
+}
